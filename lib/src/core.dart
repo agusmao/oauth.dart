@@ -22,7 +22,7 @@ int _hexDigit(int v) {
 
 List<int> oauthEncode(val) {
   if(val is String)
-    val = UTF8.encode(val);
+    val = utf8.encode(val);
   
   return new List<int>.from(val.expand((int b) {
     if(   (b >= $0 && b <= $9)
@@ -61,7 +61,7 @@ String oauthDecode(val) {
     }
   }
   
-  return UTF8.decode(buf);
+  return utf8.decode(buf);
 }
 
 class Parameter implements Comparable<Parameter> {
@@ -108,7 +108,7 @@ Iterable<Parameter> mapParameters(Map<String, String> map) {
 
 String encodeAuthParameters(Map<String, String> map) {
   return map.keys
-      .map((key) => ASCII.decode(oauthEncode(key)) + "=\"" + ASCII.decode(oauthEncode(map[key])) + "\"")
+      .map((key) => ascii.decode(oauthEncode(key)) + "=\"" + ascii.decode(oauthEncode(map[key])) + "\"")
       .join(", ");
 }
 

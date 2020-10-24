@@ -5,7 +5,7 @@ import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:test/test.dart';
 import 'package:oauth/oauth.dart' as oauth;
 import 'package:oauth/server_shelf.dart';
-import '_server_test.dart';
+import '_server.dart';
 
 main() {
   HttpServer server;
@@ -20,7 +20,7 @@ main() {
           return new shelf.Response.forbidden("Forbidden");
         }
       });
-    }, InternetAddress.LOOPBACK_IP_V6, 8989).then((server_) {
+    }, InternetAddress.loopbackIPv6, 8989).then((server_) {
       server = server_;
     });
   });
