@@ -8,7 +8,7 @@ environment:
 dependencies:
   cipher: '>=0.7.0 <0.8.0'
   crypto: '^2.0.1'
-  http: '>=0.10.0 <0.12.0'
+  http: '>=0.10.0'
 dev_dependencies:
   shelf: '>=0.6.7+2'
   test: '>=0.10.0'
